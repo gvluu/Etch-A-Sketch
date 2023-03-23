@@ -1,9 +1,9 @@
 .container {
     display: flex;
-    flex-wrap: wrap;
-    width: 755px;
+    flex-wrap: wrap; /* so row is able to the next line */
+    width: 755px; /* solved my grid not fitting to size with the container border */
     height: 700px;
-    padding: 0;
+    padding: 0; /* so grid fits tightly in container */
     border-radius: 40px;
     border: 100px solid rgb(216, 50, 50);
 }
@@ -14,13 +14,13 @@
 }
 
 .grid-square {
-    width: 45px;
+    width: 45px; /* set size to squares */
     height: 40px;
     border: 1px solid black;
-    transition: background-color 0.1s ease-in-out;
+    transition: background-color 0.1s ease-in-out; /* so at mouse-over, smoother transition */
 }
 
-.grid-square:hover,
+.grid-square:hover, /* classes for when mouse hovers and touches */
 .grid-square.touch {
   background-color: red;
 }
