@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 755px;
+    height: 700px;
+    padding: 0;
+    border-radius: 40px;
+    border: 100px solid rgb(216, 50, 50);
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-square {
+    width: 45px;
+    height: 40px;
+    border: 1px solid black;
+}
