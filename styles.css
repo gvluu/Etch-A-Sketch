@@ -20,6 +20,7 @@
     transition: background-color 0.1s ease-in-out;
 }
 
-.grid-square:hover {
+.grid-square:hover,
+.grid-square.touch {
   background-color: red;
 }

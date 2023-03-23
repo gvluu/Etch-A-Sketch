@@ -12,6 +12,9 @@ function generateGrid() {
         for (let i = 0; i < 16; i++) {
             const square = document.createElement("div");
             square.className = "grid-square";
+            square.addEventListener("mouseover", function() {
+                square.classList.add("touch");
+            });
             row.appendChild(square);
         }
 
