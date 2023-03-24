@@ -55,10 +55,13 @@ document.addEventListener("DOMContentLoaded", function() { // fires when HTML do
     function resetGrid() { // do a reset
       const squares = document.querySelectorAll(".grid-square"); // 1st pulling HTML to JS
       squares.forEach(function(square) { // for Each square
-        square.classList.remove("touch"); // remove what was touched
+        square.classList.remove("touch"); // remove what was touched (only applies to default cell)
+        square.style.backgroundColor = null;
       });
     }
-    resetButton.addEventListener("click", resetGrid); // call function by addEventListener for click
+    resetButton.addEventListener("click", function() {
+        resetGrid();
+    });
   
     eraserButton.addEventListener("click", function() { // when clicking Eraser button
       eraserMode = !eraserMode; // this statement toggles the value of eraserMode btwn true and false
