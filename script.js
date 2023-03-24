@@ -1,16 +1,10 @@
-window.onload = function() { // event that triggers initiation AFTER page has finished loading.
-    generateGrid(); // Ensures that function called only once the page is finished loading.
-};
-
-document.addEventListener("DOMContentLoaded", function() { // Ensures that JS code only runs after HTML is finished loading
-    const container = document.querySelector("#grid-container"); // was under function generateGrid but moved here for reason above
-    const resetButton = document.querySelector("#reset-btn");
-
-function generateGrid() {
+function generateGrid() { //needed to move this function OUTSIDE of DOMCONTENTLoaded event listener so that it can be called inside the window.onload event.
+    const container = document.querySelector("#grid-container");
+    
     for (let i = 0; i < 16; i++) { // to create 16 rows
         const row = document.createElement("div"); // instead of in HTML, create new element in DOM
         row.className = "row";
-
+  
         for (let i = 0; i < 16; i++) { // to create 16 squares in each row
             const square = document.createElement("div");
             square.className = "grid-square";
@@ -19,18 +13,25 @@ function generateGrid() {
             });
             row.appendChild(square); // attach 'square' class to 'row' class
         }
+  
         container.appendChild(row); // attach 'row' class to 'container' class
     }
-}
-
-
-function resetGrid() { //need in order to remove touch class for reset
-    const squares = document.querySelectorAll(".grid-square");
-    squares.forEach(function(square) {
-      square.classList.remove("touch");
-    });
   }
-
-  resetButton.addEventListener("click", resetGrid);
-  generateGrid();
-});
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const container = document.querySelector("#grid-container");
+    const resetButton = document.querySelector("#reset-btn");
+  
+    function resetGrid() {
+      const squares = document.querySelectorAll(".grid-square");
+      squares.forEach(function(square) {
+        square.classList.remove("touch");
+      });
+    }
+  
+    resetButton.addEventListener("click", resetGrid);
+  });
+  
+  window.onload = function() { // event that triggers initiation AFTER page has finished loading.
+    generateGrid(); // Ensures that function called only once the page is finished loading.
+  };
