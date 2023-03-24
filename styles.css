@@ -29,5 +29,5 @@ body {
 
 .grid-square:hover, /* classes for when mouse hovers and touches */
 .grid-square.touch {
-  background-color: red;
+  background-color: darkslategray;
 }
