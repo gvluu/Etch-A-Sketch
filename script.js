@@ -1,5 +1,6 @@
 let eraserMode = false; // global variable to toggle eraser mode on/off
 let rainbowMode = false; // will start button as false/off
+let chooseOneColor = "#000000"; // default color
 
 function generateGrid() { // needed to move this function OUTSIDE of DOMCONTENTLoaded event listener so that it can be called inside the window.onload event.
   const container = document.querySelector("#grid-container"); // not sure if this is the best spot or under DOMContentLoaded but it works.
@@ -72,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function() { // fires when HTML do
       }
     });
   });
-
 
 window.onload = function() { // event that triggers initiation AFTER page has finished loading.
     generateGrid(); // Ensures that function called only once the page is finished loading.
